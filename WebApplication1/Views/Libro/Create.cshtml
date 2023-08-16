@@ -1,0 +1,30 @@
+﻿@model IEnumerable<WebApplication1.Models.Libros>
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Lista de libros</h1>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-6">
+            <a class="btn btn-success d-block" asp-controller="Libros" asp-action="Create">Agregar</a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <td>@Html.DisplayNameFor(a => a.Id)</td>
+                <td>@Html.DisplayNameFor(a => a.Titulo)</td>
+                <td>@Html.DisplayNameFor(a => a.Descripcion)</td>
+                <td>@Html.DisplayNameFor(a => a.libros)</td>
+                <td>@Html.DisplayNameFor(a => a.precio)</td>
+                <td>Acciones</td>
+            </tr>
+        </thead>
+    </table>
+</div>
