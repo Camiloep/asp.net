@@ -8,16 +8,19 @@ namespace WebApplication1.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Campo Obligatorio")]
-        public string Titulo { get; set; }
+        public string Titulo { get; set; }  
 
         [Required(ErrorMessage = "Campo Obligatorio")]
-        public string Descripcion { get; set; }
+        public string Autor { get; set; }
 
         [Required(ErrorMessage = "Campo Obligatorio")]
-        public string libros { get; set; }
+        public string Genero { get; set; }
 
         [Required(ErrorMessage = "Campo Obligatorio")]
-        public double precio { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime AnoPublicacion { get; set; }
+
+        public ICollection<Prestamos> Prestamos { get; set; }
 
     }
 }

@@ -16,28 +16,28 @@ namespace WebApplication1.Controllers
         }
 
         // Metodo Get index
-        public IActionResult Index()
+        public IActionResult IndexLibros()
         {
             // Creamos lista de datos IEnumerable
             IEnumerable<Libros> ListLibros = _context.Libros;
             return View(ListLibros); // Retorne la lista
         }
         // HTTP Get Create
-        public IActionResult Create()
+        public IActionResult CreateLibro()
         {
             return View();
         }
 
         // POST create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Create(Libros libro)
+        //[ValidateAntiForgeryToken]
+        public IActionResult CreateLibro(Libros libro)
         {
             if (ModelState.IsValid)
             {
                 _context.Libros.Add(libro);
                 _context.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("IndexLibros");
             }
             return View();
         }
@@ -67,7 +67,7 @@ namespace WebApplication1.Controllers
             {
                 _context.Libros.Update(libro);
                 _context.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("IndexLibros");
             }
             return View();
         }
@@ -83,7 +83,7 @@ namespace WebApplication1.Controllers
 
             _context.Libros.Remove(libro);
             _context.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("IndexLibros");
         }
 
     }
